@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="12" passed="12">
+  <reporter-output>
+  </reporter-output>
+  <suite name="suite1" duration-ms="1142" started-at="2017-07-13T11:41:13Z" finished-at="2017-07-13T11:41:15Z">
+    <groups>
+    </groups>
+    <test name="test" duration-ms="1142" started-at="2017-07-13T11:41:13Z" finished-at="2017-07-13T11:41:15Z">
+      <class name="firstpackage.playertest">
+        <test-method status="PASS" signature="createboard()[pri:0, instance:firstpackage.playertest@4501b7af]" name="createboard" is-config="true" duration-ms="116" started-at="2017-07-13T17:11:13Z" finished-at="2017-07-13T17:11:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createboard -->
+        <test-method status="PASS" signature="registerplayer()[pri:1, instance:firstpackage.playertest@4501b7af]" name="registerplayer" duration-ms="65" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerplayer -->
+        <test-method status="PASS" signature="getplayerdetails()[pri:2, instance:firstpackage.playertest@4501b7af]" name="getplayerdetails" duration-ms="35" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getplayerdetails -->
+        <test-method status="PASS" signature="updateplayerdetailtest()[pri:3, instance:firstpackage.playertest@4501b7af]" name="updateplayerdetailtest" duration-ms="43" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateplayerdetailtest -->
+        <test-method status="PASS" signature="moveplayertest()[pri:4, instance:firstpackage.playertest@4501b7af]" name="moveplayertest" duration-ms="92" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- moveplayertest -->
+        <test-method status="PASS" signature="deleteplayertest()[pri:5, instance:firstpackage.playertest@4501b7af]" name="deleteplayertest" duration-ms="226" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteplayertest -->
+        <test-method status="PASS" signature="alreadydeletedplayer_deletetest()[pri:6, instance:firstpackage.playertest@4501b7af]" name="alreadydeletedplayer_deletetest" duration-ms="168" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alreadydeletedplayer_deletetest -->
+      </class> <!-- firstpackage.playertest -->
+      <class name="firstpackage.BoardTest">
+        <test-method status="PASS" signature="createboardtest()[pri:1, instance:firstpackage.BoardTest@523884b2]" name="createboardtest" duration-ms="90" started-at="2017-07-13T17:11:13Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createboardtest -->
+        <test-method status="PASS" signature="getlistofboardtest()[pri:2, instance:firstpackage.BoardTest@523884b2]" name="getlistofboardtest" duration-ms="61" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getlistofboardtest -->
+        <test-method status="PASS" signature="getddetailofboard()[pri:3, instance:firstpackage.BoardTest@523884b2]" name="getddetailofboard" duration-ms="34" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getddetailofboard -->
+        <test-method status="PASS" signature="resetboardtest()[pri:4, instance:firstpackage.BoardTest@523884b2]" name="resetboardtest" duration-ms="46" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetboardtest -->
+        <test-method status="PASS" signature="deleteboardtest()[pri:5, instance:firstpackage.BoardTest@523884b2]" name="deleteboardtest" duration-ms="73" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteboardtest -->
+        <test-method status="PASS" signature="alreadydeletedboard_deletetest()[pri:6, instance:firstpackage.BoardTest@523884b2]" name="alreadydeletedboard_deletetest" duration-ms="54" started-at="2017-07-13T17:11:14Z" finished-at="2017-07-13T17:11:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alreadydeletedboard_deletetest -->
+      </class> <!-- firstpackage.BoardTest -->
+    </test> <!-- test -->
+  </suite> <!-- suite1 -->
+</testng-results>
