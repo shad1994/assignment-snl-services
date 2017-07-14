@@ -3,12 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="rest.basicAuth.BoardTest">
+      <class name="rest.oAuth2.BoardTest">
         <methods>
-          <include name="alreadydeletedboard_deletetest"/>
+          <include name="createboardtest"/>
           <include name="deleteboardtest"/>
+          <include name="getToken"/>
+          <include name="alreadydeletedboard_deletetest"/>
+          <include name="getddetailofboard"/>
+          <include name="getlistofboardtest"/>
+          <include name="resetboardtest"/>
         </methods>
-      </class> <!-- rest.basicAuth.BoardTest -->
+      </class> <!-- rest.oAuth2.BoardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
