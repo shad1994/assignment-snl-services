@@ -1,4 +1,4 @@
-package rest.noAuth.firstpackage;
+package rest.noAuth;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

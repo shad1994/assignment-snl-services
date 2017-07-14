@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [suite2]">
+  <test name="test(failed)">
+    <classes>
+      <class name="rest.basicAuth.BoardTest">
+        <methods>
+          <include name="alreadydeletedboard_deletetest"/>
+          <include name="deleteboardtest"/>
+        </methods>
+      </class> <!-- rest.basicAuth.BoardTest -->
+      <class name="rest.basicAuth.playertest">
+        <methods>
+          <include name="alreadydeletedplayer_deletetest"/>
+          <include name="createboard"/>
+          <include name="deleteplayertest"/>
+        </methods>
+      </class> <!-- rest.basicAuth.playertest -->
+    </classes>
+  </test> <!-- test(failed) -->
+</suite> <!-- Failed suite [suite2] -->

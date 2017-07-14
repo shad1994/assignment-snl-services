@@ -1,4 +1,4 @@
-package rest.noAuth.firstpackage;
+package rest.noAuth;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
