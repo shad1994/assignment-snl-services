@@ -1,71 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="12" passed="12">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="suite2" duration-ms="2017" started-at="2017-07-14T10:12:12Z" finished-at="2017-07-14T10:12:14Z">
+  <suite name="Default suite" duration-ms="298" started-at="2017-07-14T10:22:31Z" finished-at="2017-07-14T10:22:31Z">
     <groups>
     </groups>
-    <test name="test" duration-ms="2017" started-at="2017-07-14T10:12:12Z" finished-at="2017-07-14T10:12:14Z">
-      <class name="rest.oAuth2.BoardTest">
-        <test-method status="PASS" signature="getToken()[pri:0, instance:rest.oAuth2.BoardTest@91161c7]" name="getToken" is-config="true" duration-ms="158" started-at="2017-07-14T15:42:12Z" finished-at="2017-07-14T15:42:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getToken -->
-        <test-method status="PASS" signature="createboard()[pri:0, instance:rest.oAuth2.playertest@604ed9f0]" name="createboard" is-config="true" duration-ms="159" started-at="2017-07-14T15:42:12Z" finished-at="2017-07-14T15:42:12Z">
+    <test name="Default test" duration-ms="298" started-at="2017-07-14T10:22:31Z" finished-at="2017-07-14T10:22:31Z">
+      <class name="rest.oAuth2.playertest">
+        <test-method status="PASS" signature="createboard()[pri:0, instance:rest.oAuth2.playertest@6f7fd0e6]" name="createboard" is-config="true" duration-ms="193" started-at="2017-07-14T15:52:31Z" finished-at="2017-07-14T15:52:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createboard -->
-        <test-method status="PASS" signature="createboardtest()[pri:1, instance:rest.oAuth2.BoardTest@91161c7]" name="createboardtest" duration-ms="149" started-at="2017-07-14T15:42:12Z" finished-at="2017-07-14T15:42:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createboardtest -->
-        <test-method status="PASS" signature="getlistofboardtest()[pri:2, instance:rest.oAuth2.BoardTest@91161c7]" name="getlistofboardtest" duration-ms="766" started-at="2017-07-14T15:42:13Z" finished-at="2017-07-14T15:42:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getlistofboardtest -->
-        <test-method status="PASS" signature="getddetailofboard()[pri:3, instance:rest.oAuth2.BoardTest@91161c7]" name="getddetailofboard" duration-ms="63" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getddetailofboard -->
-        <test-method status="PASS" signature="resetboardtest()[pri:4, instance:rest.oAuth2.BoardTest@91161c7]" name="resetboardtest" duration-ms="47" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- resetboardtest -->
-        <test-method status="PASS" signature="deleteboardtest()[pri:5, instance:rest.oAuth2.BoardTest@91161c7]" name="deleteboardtest" duration-ms="73" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteboardtest -->
-        <test-method status="PASS" signature="alreadydeletedboard_deletetest()[pri:6, instance:rest.oAuth2.BoardTest@91161c7]" name="alreadydeletedboard_deletetest" duration-ms="37" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- alreadydeletedboard_deletetest -->
-      </class> <!-- rest.oAuth2.BoardTest -->
-      <class name="rest.oAuth2.playertest">
-        <test-method status="PASS" signature="registerplayer()[pri:1, instance:rest.oAuth2.playertest@604ed9f0]" name="registerplayer" duration-ms="66" started-at="2017-07-14T15:42:13Z" finished-at="2017-07-14T15:42:13Z">
+        <test-method status="PASS" signature="registerplayer()[pri:1, instance:rest.oAuth2.playertest@6f7fd0e6]" name="registerplayer" duration-ms="88" started-at="2017-07-14T15:52:31Z" finished-at="2017-07-14T15:52:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerplayer -->
-        <test-method status="PASS" signature="getplayerdetails()[pri:2, instance:rest.oAuth2.playertest@604ed9f0]" name="getplayerdetails" duration-ms="63" started-at="2017-07-14T15:42:13Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getplayerdetails -->
-        <test-method status="PASS" signature="updateplayerdetailtest()[pri:3, instance:rest.oAuth2.playertest@604ed9f0]" name="updateplayerdetailtest" duration-ms="52" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateplayerdetailtest -->
-        <test-method status="PASS" signature="moveplayertest()[pri:4, instance:rest.oAuth2.playertest@604ed9f0]" name="moveplayertest" duration-ms="114" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- moveplayertest -->
-        <test-method status="PASS" signature="deleteplayertest()[pri:5, instance:rest.oAuth2.playertest@604ed9f0]" name="deleteplayertest" duration-ms="191" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteplayertest -->
-        <test-method status="PASS" signature="alreadydeletedplayer_deletetest()[pri:6, instance:rest.oAuth2.playertest@604ed9f0]" name="alreadydeletedplayer_deletetest" duration-ms="47" started-at="2017-07-14T15:42:14Z" finished-at="2017-07-14T15:42:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- alreadydeletedplayer_deletetest -->
       </class> <!-- rest.oAuth2.playertest -->
-    </test> <!-- test -->
-  </suite> <!-- suite2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class playertest {
+public class PlayerTest {
 	requests request = new requests();
 	Integer board_id;
 	static Integer player_id;

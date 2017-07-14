@@ -1,21 +1,42 @@
-package rest.basicAuth;
+package rest.oAuth2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
 
+import org.apache.oltu.oauth2.client.OAuthClient;
+import org.apache.oltu.oauth2.client.URLConnectionClient;
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
+import org.apache.oltu.oauth2.client.response.OAuthJSONAccessTokenResponse;
+import org.apache.oltu.oauth2.common.message.types.GrantType;
 import org.json.JSONObject;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class playertest {
+public class PlayerTest {
 	requests request = new requests();
 	Integer board_id;
 	static Integer player_id;
+	BoardTest boardobj=new BoardTest();
+	String token;
+	String authURL = "http://10.0.1.86/snl/oauth/authorize";
+	String tokenURL = "http://10.0.1.86/snl/oauth/token";
+	String client_id = "cd614b5147720ebf4d51ce8487701a6ff21a711be7d7935ebbf914c6a115d70c";
+	String client_secret = "2dbdf2319387b50f9c31cf10f196aeb52c45e393454f5baba6b9c7ac30b4f471";
 	
 	@BeforeTest
 	public void createboard() throws Exception
 	{
-		String response=request.sendGet("http://10.0.1.86/snl/rest/v2/board/new.json");
+		OAuthClient client = new OAuthClient(new URLConnectionClient());
+
+		OAuthClientRequest authrequest = OAuthClientRequest.tokenLocation(tokenURL)
+				.setGrantType(GrantType.CLIENT_CREDENTIALS).setClientId(client_id).setClientSecret(client_secret)
+				.buildQueryMessage();
+
+		 token = client.accessToken(authrequest, OAuthJSONAccessTokenResponse.class).getAccessToken();
+
+		System.out.println(token);
+		
+		String response=request.sendGet("http://10.0.1.86/snl/rest/v3/board/new.json"+"?"+"access_token="+token);
 		JSONObject obj=new JSONObject(response);
 		JSONObject responseObj=obj.getJSONObject("response");
 		JSONObject board=responseObj.getJSONObject("board");
@@ -25,7 +46,7 @@ public class playertest {
 	@Test(priority=1)
 	public void registerplayer() throws Exception {
 		String message = "{\"board\":" + "\"" + board_id + "\"" + ",\"player\":{\"name\": \"shadab\"}}";
-		String response = request.sendPost("http://10.0.1.86/snl/rest/v2/player.json", message);
+		String response = request.sendPost("http://10.0.1.86/snl/rest/v3/player.json"+"?"+"access_token="+token, message);
 		JSONObject obj = new JSONObject(response);
 		JSONObject responseObj = obj.getJSONObject("response");
 		JSONObject playerObj = responseObj.getJSONObject("player");
@@ -39,7 +60,7 @@ public class playertest {
 	@Test(priority=2)
 	public void getplayerdetails() throws Exception {
 
-		String response = request.sendGet("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json");
+		String response = request.sendGet("http://10.0.1.86/snl/rest/v3/player/" + player_id + ".json"+"?"+"access_token="+token);
 		JSONObject obj = new JSONObject(response);
 		System.out.println(response);
 		JSONObject responseObj = obj.getJSONObject("response");
@@ -53,7 +74,7 @@ public class playertest {
 
 		String data = "{\"player\":{\"name\":\"shad\"}}";
 
-		String response = request.putrequest("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json", data);
+		String response = request.putrequest("http://10.0.1.86/snl/rest/v3/player/" + player_id + ".json"+"?"+"access_token="+token, data);
 		JSONObject obj = new JSONObject(response);
 		JSONObject responseObj = obj.getJSONObject("response");
 		JSONObject playerObj = responseObj.getJSONObject("player");
@@ -66,14 +87,14 @@ public class playertest {
 	@Test(priority=4)
 	public void moveplayertest() throws Exception {
 
-		String response = request.sendGet("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json");
+		String response = request.sendGet("http://10.0.1.86/snl/rest/v3/player/" + player_id + ".json"+"?"+"access_token="+token);
 		JSONObject obj = new JSONObject(response);
 		System.out.println(response);
 		JSONObject responseObj = obj.getJSONObject("response");
 		JSONObject playerObj = responseObj.getJSONObject("player");
 		Integer startingposition = playerObj.getInt("position");
 		System.out.println("get details");
-		String response2 = request.sendGet("http://10.0.1.86/snl/rest/v2/move/" + board_id + ".json?player_id=" + player_id);
+		String response2 = request.sendGet("http://10.0.1.86/snl/rest/v3/move/" + board_id + ".json?player_id=" + player_id+"&"+"access_token="+token);
 		System.out.println("move");
 
 		JSONObject obj2 = new JSONObject(response2);
@@ -86,13 +107,13 @@ public class playertest {
 	
 	@Test(priority=5)
 	public void deleteplayertest() throws Exception {
-		String response = request.deleteRequest("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json");
+		String response = request.deleteRequest("http://10.0.1.86/snl/rest/v3/player/" + player_id + ".json"+"?"+"access_token="+token);
 		
 		JSONObject obj = new JSONObject(response);
 		JSONObject responseObj = obj.getJSONObject("response");
 		assertThat(responseObj.get("status")).isEqualTo(1);
 
-		String response2 = request.sendGet("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json");
+		String response2 = request.sendGet("http://10.0.1.86/snl/rest/v3/player/" + player_id + ".json"+"?"+"access_token="+token);
 		assertThat(response2).isEqualTo("not found");
 		
 	}
@@ -100,14 +121,10 @@ public class playertest {
 	@Test(priority=6)
 	public void alreadydeletedplayer_deletetest() throws IOException
 	{
-		String response = request.deleteRequest("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json");
+		String response = request.deleteRequest("http://10.0.1.86/snl/rest/v3/player/" + player_id + ".json"+"?"+"access_token="+token);
 		assertThat(response).isEqualTo("not exist");
 	}
 
-	/*public static void main(String args[]) throws Exception {
-		playertest test = new playertest();
-		test.deleteplayertest();
-		//System.out.println("player moved");
-	}*/
+	
 
 }
